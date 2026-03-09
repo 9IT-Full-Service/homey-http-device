@@ -1,81 +1,81 @@
 # HTTP Device for Homey
 
-Virtuelles Homey-Device mit 8 konfigurierbaren Buttons, das HTTP-Requests ueber Homey-Flows ausloesen kann.
+Virtual Homey device with 8 configurable buttons that can trigger HTTP requests via Homey Flows.
 
-## Was macht die App?
+## What does this app do?
 
-Homey unterstuetzt von Haus aus keine HTTP-Requests in Flows. Diese App schliesst diese Luecke:
+Homey does not natively support HTTP requests in Flows. This app fills that gap:
 
-- **Virtuelles Device** mit 8 Buttons, die in der Homey-UI sichtbar und drueckbar sind
-- **Flow Trigger**: "Button X wurde gedrueckt" — als Ausloeser fuer beliebige Flows
-- **Flow Action**: "HTTP Request ausfuehren" — sendet GET, POST, PUT, DELETE oder PATCH Requests mit konfigurierbarer URL, Body und Headers
+- **Virtual Device** with 8 buttons, visible and pressable in the Homey UI
+- **Flow Trigger**: "Button X was pressed" — use as a trigger for any flow
+- **Flow Action**: "Make HTTP request" — sends GET, POST, PUT, DELETE or PATCH requests with configurable URL, body and headers
 
-## Flow-Beispiele
+## Flow Examples
 
-### Einfacher GET-Request per Button
+### Simple GET request via button
 ```
-WENN:   Button 1 auf "HTTP Device" gedrueckt wird
-DANN:   GET-Request an https://api.example.com/trigger senden
+WHEN:   Button 1 on "HTTP Device" is pressed
+THEN:   Send GET request to https://api.example.com/trigger
 ```
 
-### POST-Request mit JSON-Body
+### POST request with JSON body
 ```
-WENN:   Button 2 auf "HTTP Device" gedrueckt wird
-DANN:   POST-Request an https://api.example.com/action
+WHEN:   Button 2 on "HTTP Device" is pressed
+THEN:   Send POST request to https://api.example.com/action
         Body: {"command": "toggle_light"}
         Headers: {"Authorization": "Bearer token123"}
 ```
 
-### Kombination mit anderen Devices
+### Combination with other devices
 ```
-WENN:   Temperatur-Sensor meldet > 25°C
-DANN:   POST-Request an https://hooks.example.com/notify
-        Body: {"message": "Temperatur zu hoch!"}
+WHEN:   Temperature sensor reports > 25°C
+THEN:   Send POST request to https://hooks.example.com/notify
+        Body: {"message": "Temperature too high!"}
 ```
 
-## Flow Action Parameter
+## Flow Action Parameters
 
-| Parameter | Typ | Pflicht | Beschreibung |
-|-----------|-----|---------|--------------|
-| URL | Text | Ja | Ziel-URL fuer den HTTP-Request |
-| Methode | Dropdown | Ja | GET, POST, PUT, DELETE, PATCH |
-| Body | Text | Nein | Request-Body (z.B. JSON-String) |
-| Headers | Text | Nein | Zusaetzliche Headers als JSON-String |
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| URL | Text | Yes | Target URL for the HTTP request |
+| Method | Dropdown | Yes | GET, POST, PUT, DELETE, PATCH |
+| Body | Text | No | Request body (e.g. JSON string) |
+| Headers | Text | No | Additional headers as JSON string |
 
 ## Installation
 
 ```bash
 cd homey-http-device
 
-# 1. Homey CLI installieren (falls noch nicht vorhanden)
+# 1. Install Homey CLI (if not already installed)
 npm install -g homey
 
-# 2. Bei Homey einloggen
+# 2. Log in to Homey
 homey login
 
-# 3. App auf dem Homey testen
+# 3. Test the app on your Homey
 homey app run
 
-# 4. App dauerhaft installieren
+# 4. Install the app permanently
 homey app install
 ```
 
-## Device hinzufuegen
+## Adding a device
 
-1. Homey App oeffnen
+1. Open the Homey app
 2. Devices → **+** → HTTP Device
-3. "HTTP Device" auswaehlen und hinzufuegen
-4. Die 8 Buttons erscheinen im Device
+3. Select "HTTP Device" and add it
+4. The 8 buttons will appear on the device
 
-## Projektstruktur
+## Project Structure
 
 ```
 homey-http-device/
-├── app.json                          # App-Manifest
-├── app.js                            # Flow-Action-Handler (HTTP fetch)
+├── app.json                          # App manifest
+├── app.js                            # Flow action handler (HTTP requests)
 ├── drivers/http-device/
-│   ├── driver.js                     # Pairing (virtuelles Device)
-│   ├── device.js                     # 8 Button-Capabilities + Flow-Trigger
+│   ├── driver.js                     # Pairing (virtual device)
+│   ├── device.js                     # 8 button capabilities + flow trigger
 │   └── assets/icon.svg
 ├── assets/icon.svg
 ├── locales/{en,de}.json

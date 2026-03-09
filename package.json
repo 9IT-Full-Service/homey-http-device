@@ -5,5 +5,8 @@
   "scripts": {
     "start": "homey app run",
     "install-app": "homey app install"
+  },
+  "devDependencies": {
+    "canvas": "^3.2.1"
   }
 }

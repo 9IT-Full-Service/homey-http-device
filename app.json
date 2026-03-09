@@ -15,8 +15,9 @@
   "category": ["tools"],
   "brandColor": "#00d4ff",
   "images": {
-    "small": "/assets/icon.svg",
-    "large": "/assets/icon.svg"
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
   },
   "author": {
     "name": "Ruediger"
@@ -195,8 +196,9 @@
       "platforms": ["local"],
       "connectivity": [],
       "images": {
-        "small": "/drivers/http-device/assets/icon.svg",
-        "large": "/drivers/http-device/assets/icon.svg"
+        "small": "/drivers/http-device/assets/images/small.png",
+        "large": "/drivers/http-device/assets/images/large.png",
+        "xlarge": "/drivers/http-device/assets/images/xlarge.png"
       },
       "pair": [
         {

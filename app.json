@@ -26,6 +26,11 @@
   "author": {
     "name": "Ruediger"
   },
+  "support": "https://github.com/9IT-Full-Service/homey-http-device/issues",
+  "source": "https://github.com/9IT-Full-Service/homey-http-device",
+  "bugs": {
+    "url": "https://github.com/9IT-Full-Service/homey-http-device/issues"
+  },
   "tags": {
     "en": [
       "http",

@@ -1,5 +1,8 @@
 {
   "1.0.3": {
     "en": "publish"
+  },
+  "1.0.4": {
+    "en": "fix: add support link"
   }
 }

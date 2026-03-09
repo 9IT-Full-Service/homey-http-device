@@ -1,9 +1,11 @@
 {
   "id": "com.custom.http-device",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
-  "platforms": ["local"],
+  "platforms": [
+    "local"
+  ],
   "name": {
     "en": "HTTP Device",
     "de": "HTTP Device"
@@ -12,7 +14,9 @@
     "en": "Virtual device with buttons that trigger HTTP requests via flows",
     "de": "Virtuelles Device mit Buttons die HTTP-Requests per Flow ausloesen"
   },
-  "category": ["tools"],
+  "category": [
+    "tools"
+  ],
   "brandColor": "#00d4ff",
   "images": {
     "small": "/assets/images/small.png",
@@ -23,13 +27,30 @@
     "name": "Ruediger"
   },
   "tags": {
-    "en": ["http", "request", "api", "webhook", "virtual", "button"],
-    "de": ["http", "request", "api", "webhook", "virtuell", "button"]
+    "en": [
+      "http",
+      "request",
+      "api",
+      "webhook",
+      "virtual",
+      "button"
+    ],
+    "de": [
+      "http",
+      "request",
+      "api",
+      "webhook",
+      "virtuell",
+      "button"
+    ]
   },
   "capabilities": {
     "button_btn1": {
       "type": "boolean",
-      "title": { "en": "Button 1", "de": "Button 1" },
+      "title": {
+        "en": "Button 1",
+        "de": "Button 1"
+      },
       "setable": true,
       "getable": false,
       "uiComponent": "button",
@@ -37,7 +58,10 @@
     },
     "button_btn2": {
       "type": "boolean",
-      "title": { "en": "Button 2", "de": "Button 2" },
+      "title": {
+        "en": "Button 2",
+        "de": "Button 2"
+      },
       "setable": true,
       "getable": false,
       "uiComponent": "button",
@@ -45,7 +69,10 @@
     },
     "button_btn3": {
       "type": "boolean",
-      "title": { "en": "Button 3", "de": "Button 3" },
+      "title": {
+        "en": "Button 3",
+        "de": "Button 3"
+      },
       "setable": true,
       "getable": false,
       "uiComponent": "button",
@@ -53,7 +80,10 @@
     },
     "button_btn4": {
       "type": "boolean",
-      "title": { "en": "Button 4", "de": "Button 4" },
+      "title": {
+        "en": "Button 4",
+        "de": "Button 4"
+      },
       "setable": true,
       "getable": false,
       "uiComponent": "button",
@@ -61,7 +91,10 @@
     },
     "button_btn5": {
       "type": "boolean",
-      "title": { "en": "Button 5", "de": "Button 5" },
+      "title": {
+        "en": "Button 5",
+        "de": "Button 5"
+      },
       "setable": true,
       "getable": false,
       "uiComponent": "button",
@@ -69,7 +102,10 @@
     },
     "button_btn6": {
       "type": "boolean",
-      "title": { "en": "Button 6", "de": "Button 6" },
+      "title": {
+        "en": "Button 6",
+        "de": "Button 6"
+      },
       "setable": true,
       "getable": false,
       "uiComponent": "button",
@@ -77,7 +113,10 @@
     },
     "button_btn7": {
       "type": "boolean",
-      "title": { "en": "Button 7", "de": "Button 7" },
+      "title": {
+        "en": "Button 7",
+        "de": "Button 7"
+      },
       "setable": true,
       "getable": false,
       "uiComponent": "button",
@@ -85,7 +124,10 @@
     },
     "button_btn8": {
       "type": "boolean",
-      "title": { "en": "Button 8", "de": "Button 8" },
+      "title": {
+        "en": "Button 8",
+        "de": "Button 8"
+      },
       "setable": true,
       "getable": false,
       "uiComponent": "button",
@@ -113,16 +155,59 @@
           {
             "type": "dropdown",
             "name": "button_number",
-            "title": { "en": "Button", "de": "Button" },
+            "title": {
+              "en": "Button",
+              "de": "Button"
+            },
             "values": [
-              { "id": "1", "label": { "en": "Button 1" } },
-              { "id": "2", "label": { "en": "Button 2" } },
-              { "id": "3", "label": { "en": "Button 3" } },
-              { "id": "4", "label": { "en": "Button 4" } },
-              { "id": "5", "label": { "en": "Button 5" } },
-              { "id": "6", "label": { "en": "Button 6" } },
-              { "id": "7", "label": { "en": "Button 7" } },
-              { "id": "8", "label": { "en": "Button 8" } }
+              {
+                "id": "1",
+                "label": {
+                  "en": "Button 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Button 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Button 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Button 4"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Button 5"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Button 6"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Button 7"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Button 8"
+                }
+              }
             ]
           }
         ]
@@ -143,33 +228,76 @@
           {
             "type": "text",
             "name": "url",
-            "title": { "en": "URL", "de": "URL" },
-            "placeholder": { "en": "https://example.com/api" }
+            "title": {
+              "en": "URL",
+              "de": "URL"
+            },
+            "placeholder": {
+              "en": "https://example.com/api"
+            }
           },
           {
             "type": "dropdown",
             "name": "method",
-            "title": { "en": "Method", "de": "Methode" },
+            "title": {
+              "en": "Method",
+              "de": "Methode"
+            },
             "values": [
-              { "id": "GET", "label": { "en": "GET" } },
-              { "id": "POST", "label": { "en": "POST" } },
-              { "id": "PUT", "label": { "en": "PUT" } },
-              { "id": "DELETE", "label": { "en": "DELETE" } },
-              { "id": "PATCH", "label": { "en": "PATCH" } }
+              {
+                "id": "GET",
+                "label": {
+                  "en": "GET"
+                }
+              },
+              {
+                "id": "POST",
+                "label": {
+                  "en": "POST"
+                }
+              },
+              {
+                "id": "PUT",
+                "label": {
+                  "en": "PUT"
+                }
+              },
+              {
+                "id": "DELETE",
+                "label": {
+                  "en": "DELETE"
+                }
+              },
+              {
+                "id": "PATCH",
+                "label": {
+                  "en": "PATCH"
+                }
+              }
             ]
           },
           {
             "type": "text",
             "name": "body",
-            "title": { "en": "Body", "de": "Body" },
-            "placeholder": { "en": "{\"key\": \"value\"}" },
+            "title": {
+              "en": "Body",
+              "de": "Body"
+            },
+            "placeholder": {
+              "en": "{\"key\": \"value\"}"
+            },
             "required": false
           },
           {
             "type": "text",
             "name": "headers",
-            "title": { "en": "Headers (JSON)", "de": "Headers (JSON)" },
-            "placeholder": { "en": "{\"Content-Type\": \"application/json\"}" },
+            "title": {
+              "en": "Headers (JSON)",
+              "de": "Headers (JSON)"
+            },
+            "placeholder": {
+              "en": "{\"Content-Type\": \"application/json\"}"
+            },
             "required": false
           }
         ]
@@ -193,7 +321,9 @@
         "button_btn7",
         "button_btn8"
       ],
-      "platforms": ["local"],
+      "platforms": [
+        "local"
+      ],
       "connectivity": [],
       "images": {
         "small": "/drivers/http-device/assets/images/small.png",
@@ -204,7 +334,9 @@
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": { "next": "add_devices" }
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",

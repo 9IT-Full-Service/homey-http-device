@@ -4,5 +4,8 @@
   },
   "1.0.4": {
     "en": "fix: add support link"
+  },
+  "1.0.5": {
+    "en": "Update app id"
   }
 }

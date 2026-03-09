@@ -1,0 +1,215 @@
+{
+  "id": "com.custom.http-device",
+  "version": "1.0.2",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": ["local"],
+  "name": {
+    "en": "HTTP Device",
+    "de": "HTTP Device"
+  },
+  "description": {
+    "en": "Virtual device with buttons that trigger HTTP requests via flows",
+    "de": "Virtuelles Device mit Buttons die HTTP-Requests per Flow ausloesen"
+  },
+  "category": ["tools"],
+  "brandColor": "#00d4ff",
+  "images": {
+    "small": "/assets/icon.svg",
+    "large": "/assets/icon.svg"
+  },
+  "author": {
+    "name": "Ruediger"
+  },
+  "tags": {
+    "en": ["http", "request", "api", "webhook", "virtual", "button"],
+    "de": ["http", "request", "api", "webhook", "virtuell", "button"]
+  },
+  "capabilities": {
+    "button_btn1": {
+      "type": "boolean",
+      "title": { "en": "Button 1", "de": "Button 1" },
+      "setable": true,
+      "getable": false,
+      "uiComponent": "button",
+      "icon": "/assets/icon.svg"
+    },
+    "button_btn2": {
+      "type": "boolean",
+      "title": { "en": "Button 2", "de": "Button 2" },
+      "setable": true,
+      "getable": false,
+      "uiComponent": "button",
+      "icon": "/assets/icon.svg"
+    },
+    "button_btn3": {
+      "type": "boolean",
+      "title": { "en": "Button 3", "de": "Button 3" },
+      "setable": true,
+      "getable": false,
+      "uiComponent": "button",
+      "icon": "/assets/icon.svg"
+    },
+    "button_btn4": {
+      "type": "boolean",
+      "title": { "en": "Button 4", "de": "Button 4" },
+      "setable": true,
+      "getable": false,
+      "uiComponent": "button",
+      "icon": "/assets/icon.svg"
+    },
+    "button_btn5": {
+      "type": "boolean",
+      "title": { "en": "Button 5", "de": "Button 5" },
+      "setable": true,
+      "getable": false,
+      "uiComponent": "button",
+      "icon": "/assets/icon.svg"
+    },
+    "button_btn6": {
+      "type": "boolean",
+      "title": { "en": "Button 6", "de": "Button 6" },
+      "setable": true,
+      "getable": false,
+      "uiComponent": "button",
+      "icon": "/assets/icon.svg"
+    },
+    "button_btn7": {
+      "type": "boolean",
+      "title": { "en": "Button 7", "de": "Button 7" },
+      "setable": true,
+      "getable": false,
+      "uiComponent": "button",
+      "icon": "/assets/icon.svg"
+    },
+    "button_btn8": {
+      "type": "boolean",
+      "title": { "en": "Button 8", "de": "Button 8" },
+      "setable": true,
+      "getable": false,
+      "uiComponent": "button",
+      "icon": "/assets/icon.svg"
+    }
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "button_pressed",
+        "title": {
+          "en": "A button was pressed",
+          "de": "Ein Button wurde gedrueckt"
+        },
+        "titleFormatted": {
+          "en": "Button [[button_number]] was pressed",
+          "de": "Button [[button_number]] wurde gedrueckt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=http-device"
+          },
+          {
+            "type": "dropdown",
+            "name": "button_number",
+            "title": { "en": "Button", "de": "Button" },
+            "values": [
+              { "id": "1", "label": { "en": "Button 1" } },
+              { "id": "2", "label": { "en": "Button 2" } },
+              { "id": "3", "label": { "en": "Button 3" } },
+              { "id": "4", "label": { "en": "Button 4" } },
+              { "id": "5", "label": { "en": "Button 5" } },
+              { "id": "6", "label": { "en": "Button 6" } },
+              { "id": "7", "label": { "en": "Button 7" } },
+              { "id": "8", "label": { "en": "Button 8" } }
+            ]
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "make_http_request",
+        "title": {
+          "en": "Make an HTTP request",
+          "de": "HTTP-Request ausfuehren"
+        },
+        "titleFormatted": {
+          "en": "Make [[method]] request to [[url]] with body [[body]] and headers [[headers]]",
+          "de": "[[method]]-Request an [[url]] mit Body [[body]] und Headers [[headers]] senden"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "url",
+            "title": { "en": "URL", "de": "URL" },
+            "placeholder": { "en": "https://example.com/api" }
+          },
+          {
+            "type": "dropdown",
+            "name": "method",
+            "title": { "en": "Method", "de": "Methode" },
+            "values": [
+              { "id": "GET", "label": { "en": "GET" } },
+              { "id": "POST", "label": { "en": "POST" } },
+              { "id": "PUT", "label": { "en": "PUT" } },
+              { "id": "DELETE", "label": { "en": "DELETE" } },
+              { "id": "PATCH", "label": { "en": "PATCH" } }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "body",
+            "title": { "en": "Body", "de": "Body" },
+            "placeholder": { "en": "{\"key\": \"value\"}" },
+            "required": false
+          },
+          {
+            "type": "text",
+            "name": "headers",
+            "title": { "en": "Headers (JSON)", "de": "Headers (JSON)" },
+            "placeholder": { "en": "{\"Content-Type\": \"application/json\"}" },
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "HTTP Device",
+        "de": "HTTP Device"
+      },
+      "class": "other",
+      "capabilities": [
+        "button_btn1",
+        "button_btn2",
+        "button_btn3",
+        "button_btn4",
+        "button_btn5",
+        "button_btn6",
+        "button_btn7",
+        "button_btn8"
+      ],
+      "platforms": ["local"],
+      "connectivity": [],
+      "images": {
+        "small": "/drivers/http-device/assets/icon.svg",
+        "large": "/drivers/http-device/assets/icon.svg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": { "next": "add_devices" }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "http-device"
+    }
+  ]
+}

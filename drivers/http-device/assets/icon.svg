@@ -1,49 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1a1a2e"/>
-      <stop offset="100%" stop-color="#16213e"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#00d4ff"/>
-      <stop offset="100%" stop-color="#7b2ff7"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" fill="none">
+  <!-- Driver Icon: Virtual device panel with buttons, slight right-angle perspective -->
+  <!-- Transparent background, single color (#000), 960x960 canvas -->
 
-  <!-- Background -->
-  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <!-- Device body (angled panel - slight 3D perspective from right) -->
+  <path d="
+    M220 160
+    L680 120
+    Q720 118 730 155
+    L750 760
+    Q755 800 715 805
+    L255 840
+    Q215 843 210 805
+    L190 200
+    Q185 162 220 160 Z
+  " stroke="#000" stroke-width="18" fill="none" stroke-linejoin="round"/>
 
-  <!-- Smart device body (rounded rectangle like a smart plug/switch) -->
-  <rect x="34" y="22" width="60" height="52" rx="10" fill="#232946" stroke="#00d4ff" stroke-width="2" opacity="0.9"/>
+  <!-- Screen area on device -->
+  <path d="
+    M280 220
+    L650 190
+    Q668 189 670 207
+    L680 430
+    Q682 448 664 450
+    L290 475
+    Q272 477 270 459
+    L265 238
+    Q263 220 280 220 Z
+  " stroke="#000" stroke-width="12" fill="none" stroke-linejoin="round"/>
 
-  <!-- Device screen area -->
-  <rect x="42" y="30" width="44" height="28" rx="4" fill="#0d1b2a"/>
+  <!-- Code brackets on screen -->
+  <path d="M410 310 L380 340 L410 370" stroke="#000" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M530 300 L560 330 L530 360" stroke="#000" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="445" y1="375" x2="500" y2="295" stroke="#000" stroke-width="10" stroke-linecap="round"/>
 
-  <!-- Screen content: < / > code brackets -->
-  <text x="64" y="50" text-anchor="middle" font-family="monospace" font-weight="700" font-size="16" fill="#00d4ff" opacity="0.8">&lt;/&gt;</text>
+  <!-- Button row 1 -->
+  <rect x="290" y="530" width="80" height="60" rx="14" stroke="#000" stroke-width="12" fill="none"/>
+  <rect x="410" y="520" width="80" height="60" rx="14" stroke="#000" stroke-width="12" fill="none"/>
+  <rect x="530" y="510" width="80" height="60" rx="14" stroke="#000" stroke-width="12" fill="none"/>
 
-  <!-- Device power indicator dot -->
-  <circle cx="64" cy="66" r="2.5" fill="#00ff88" opacity="0.9"/>
+  <!-- Button row 2 -->
+  <rect x="300" y="640" width="80" height="60" rx="14" stroke="#000" stroke-width="12" fill="none"/>
+  <rect x="420" y="630" width="80" height="60" rx="14" stroke="#000" stroke-width="12" fill="none"/>
+  <rect x="540" y="620" width="80" height="60" rx="14" stroke="#000" stroke-width="12" fill="none"/>
 
-  <!-- WiFi / signal arcs above device -->
-  <path d="M56 20 Q64 12 72 20" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-  <path d="M52 16 Q64 6 76 16" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+  <!-- Power LED dot at bottom -->
+  <circle cx="490" cy="770" r="14" stroke="#000" stroke-width="10" fill="none"/>
+  <circle cx="490" cy="770" r="5" fill="#000"/>
 
-  <!-- Connection lines from device going outward (HTTP requests) -->
-  <!-- Right arrow -->
-  <line x1="96" y1="48" x2="112" y2="48" stroke="#7b2ff7" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-  <path d="M109 44 L114 48 L109 52" fill="none" stroke="#7b2ff7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
-
-  <!-- Left arrow -->
-  <line x1="32" y1="48" x2="16" y2="48" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-  <path d="M19 44 L14 48 L19 52" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
-
-  <!-- Data dots flying along connections -->
-  <circle cx="104" cy="48" r="2" fill="#7b2ff7" opacity="0.8"/>
-  <circle cx="22" cy="48" r="2" fill="#00d4ff" opacity="0.8"/>
-
-  <!-- HTTP label bar at bottom -->
-  <rect x="32" y="86" width="64" height="24" rx="12" fill="url(#accent)" opacity="0.15"/>
-  <rect x="32" y="86" width="64" height="24" rx="12" fill="none" stroke="url(#accent)" stroke-width="1.5" opacity="0.5"/>
-  <text x="64" y="103" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="15" fill="#00d4ff" letter-spacing="4">HTTP</text>
+  <!-- WiFi signal arcs above device -->
+  <path d="M440 120 Q480 80 520 120" stroke="#000" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <path d="M420 90 Q480 40 540 90" stroke="#000" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.6"/>
 </svg>
